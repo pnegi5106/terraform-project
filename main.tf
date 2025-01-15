@@ -18,7 +18,7 @@ chkconfig httpd on
 echo "hai all this is my app created by terraform infrastructurte by prashant sir server-1" > /var/www/html/index.html
 EOF
   tags = {
-    Name = "T-web-server-1"
+    Name = "server-1"
   }
 }
 
@@ -37,7 +37,7 @@ chkconfig httpd on
 echo "hai all this is my website created by terraform infrastructurte by prashant sir server-2" > /var/www/html/index.html
 EOF
   tags = {
-    Name = "T-web-server-2"
+    Name = "server-2"
   }
 }
 
@@ -48,7 +48,7 @@ resource "aws_instance" "three" {
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1a"
   tags = {
-    Name = "t-app-server-1"
+    Name = "server-3"
   }
 }
 
@@ -59,7 +59,7 @@ resource "aws_instance" "four" {
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1b"
   tags = {
-    Name = "t-app-server-2"
+    Name = "server-4"
   }
 }
 
@@ -88,7 +88,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "demoprojectofterraform"
+  bucket = "demoproject"
 }
 
 resource "aws_iam_user" "seven" {
@@ -99,7 +99,7 @@ name = each.value
 variable "user_names" {
 description = "*"
 type = set(string)
-default = ["user1", "user2", "user3", "user4"]
+default = ["u1", "u2", "u3", "u4"]
 }
 
 resource "aws_ebs_volume" "eight" {
