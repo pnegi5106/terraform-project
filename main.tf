@@ -64,7 +64,7 @@ resource "aws_instance" "four" {
 }
 
 resource "aws_security_group" "five" {
-  name = "elb-sg"
+  name = "elb-sg23"
   ingress {
     from_port   = 22
     to_port     = 22
