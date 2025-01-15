@@ -88,7 +88,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "demoproject"
+  bucket = "demo"
 }
 
 resource "aws_iam_user" "seven" {
@@ -99,7 +99,7 @@ name = each.value
 variable "user_names" {
 description = "*"
 type = set(string)
-default = ["u1", "u2", "u3", "u4"]
+default = ["u1", "u2"]
 }
 
 resource "aws_ebs_volume" "eight" {
